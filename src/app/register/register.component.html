@@ -1,0 +1,21 @@
+<div class="c1">
+  <h3 style="padding: 20px; text-decoration: underline">REGISTER FORM</h3>
+  <form [formGroup]="regform">
+    <div class="form-group">
+      <label for="USERNAME">USERNAME</label>
+      <input type="text" formControlName="username" />
+      <span
+        *ngIf="regform.controls.username.invalid && regform.controls.username.touched && regform.controls.username.errors.required"
+        class="error1">*Enter UserName</span>
+    </div>
+
+    <div class="form-group">
+      <label for="PASSWORD">PASSWORD</label>
+      <input type="text" formControlName="pwd" />
+      <span *ngIf="regform.controls.pwd.invalid && regform.controls.pwd.touched && regform.controls.pwd.errors.required"
+        class="error2">*Enter PASSWORD</span>
+
+    </div>
+    <input type="submit" (click)="register()">
+  </form>
+</div>
